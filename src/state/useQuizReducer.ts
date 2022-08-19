@@ -1,4 +1,5 @@
 import { Dispatch, useEffect, useReducer } from 'react';
+import { useQuestions } from './data';
 import { Question } from './types';
 
 type QuizState = {
@@ -85,19 +86,9 @@ const quizReducer = (state: QuizState, action: QuizAction): QuizState => {
 export const useQuizReducer = (): [QuizState, Dispatch<QuizAction>] => {
   const [state, dispatch] = useReducer(quizReducer, intialState);
 
-  useEffect(() => {
-    fetch('https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean')
-      .then((res) => res.json())
-      .then((data) => {
-        dispatch({
-          type: 'SET_QUESTIONS',
-          payload: { questions: data.results },
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  useQuestions({
+    onSuccess: (questions) => dispatch({ type: 'SET_QUESTIONS', payload: { questions } }),
+  });
 
   return [state, dispatch];
 };
