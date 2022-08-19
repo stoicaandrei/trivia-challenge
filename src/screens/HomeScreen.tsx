@@ -1,7 +1,7 @@
 import { QuizLayout } from '~/layouts';
 
 type Props = {
-  onBegin: () => void;
+  onBegin?: () => void;
 };
 
 export const HomeScreen = ({ onBegin }: Props) => {
