@@ -10,7 +10,9 @@ export const useQuestions = (options: UseQuestionsOptions) => {
     [url],
     async () => {
       const res = await fetch(url);
-      return res.json();
+      const data = await res.json();
+
+      return data.results;
     },
     options,
   );

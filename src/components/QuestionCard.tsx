@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify';
 import { Question } from '~/state';
 
 type Props = {

@@ -13,6 +13,8 @@ export const QuizPage = () => {
     return <p>Loading...</p>;
   }
 
+  console.log(state);
+
   const { isStarted, isFinished } = state;
 
   return (
