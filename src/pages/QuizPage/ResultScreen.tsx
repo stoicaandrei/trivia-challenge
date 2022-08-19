@@ -1,4 +1,4 @@
-import DOMPurify from 'dompurify';
+import { QuestionsResultList } from '~/components';
 import { QuizLayout } from '~/layouts';
 import { Question } from '~/state';
 
@@ -16,17 +16,7 @@ export const ResultScreen = ({ questions, answers, onPlayAgain }: Props) => {
       <h1 className='font-semibold'>
         You scored {score} / {answers.length}
       </h1>
-      <div className='grid grid-cols-[min-content,1fr] items-start gap-5 overflow-scroll'>
-        {questions.map((question, index) => (
-          <div key={index} className='contents text-slate-500'>
-            <span className='text-2xl'>{answers[index] ? '+' : '-'}</span>
-            <span
-              className='text-left text-base'
-              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(question.question) }}
-            />
-          </div>
-        ))}
-      </div>
+      <QuestionsResultList questions={questions} answers={answers} />
       <button onClick={onPlayAgain}>PLAY AGAIN?</button>
     </QuizLayout>
   );
