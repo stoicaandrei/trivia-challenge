@@ -1,10 +1,5 @@
-import { Dispatch, useEffect, useReducer, useState } from 'react';
-
-type Question = {
-  category: string;
-  question: string;
-  correct_answer: 'True' | 'False';
-};
+import { Dispatch, useEffect, useReducer } from 'react';
+import { Question } from './types';
 
 type QuizState = {
   questions: Question[];
@@ -32,7 +27,7 @@ type SetQuestionsAction = {
 };
 
 type AnswerQuizAction = {
-  type: 'ANSWER_QUIZ';
+  type: 'ANSWER_QUESTION';
   payload: {
     answer: 'True' | 'False';
   };
@@ -63,7 +58,7 @@ const quizReducer = (state: QuizState, action: QuizAction) => {
         currentQuestion: 0,
         score: 0,
       };
-    case 'ANSWER_QUIZ':
+    case 'ANSWER_QUESTION':
       const { answer } = action.payload;
       const { currentQuestion, score } = state;
       const isCorrect = state.questions[currentQuestion].correct_answer === answer;
