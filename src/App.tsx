@@ -1,4 +1,4 @@
-import { HomeScreen, QuizScreen } from '~/screens';
+import { HomeScreen, QuizScreen, ResultScreen } from '~/screens';
 import { useQuizReducer } from '~/state';
 
 function App() {
@@ -8,10 +8,12 @@ function App() {
     return <p>Loading...</p>;
   }
 
+  const { isStarted, isFinished } = state;
+
   return (
     <div>
-      {!state.isStarted && <HomeScreen onBegin={() => dispatch({ type: 'START_QUIZ' })} />}
-      {state.isStarted && (
+      {!isStarted && !isFinished && <HomeScreen onBegin={() => dispatch({ type: 'START_QUIZ' })} />}
+      {isStarted && (
         <QuizScreen
           questions={state.questions}
           currentQuestion={state.currentQuestion}
@@ -23,7 +25,13 @@ function App() {
           }
         />
       )}
-      {state.isFinished && <p>Finished</p>}
+      {isFinished && (
+        <ResultScreen
+          questions={state.questions}
+          answers={state.answers}
+          onPlayAgain={() => dispatch({ type: 'RESET_QUIZ' })}
+        />
+      )}
     </div>
   );
 }

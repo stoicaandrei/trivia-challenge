@@ -62,11 +62,14 @@ const quizReducer = (state: QuizState, action: QuizAction): QuizState => {
       const { answer } = action.payload;
       const { currentQuestion, answers } = state;
       const isCorrect = state.questions[currentQuestion].correct_answer === answer;
+      const isFinished = currentQuestion + 1 === state.questions.length;
+
       return {
         ...state,
         currentQuestion: currentQuestion + 1,
         answers: [...answers, isCorrect],
-        isFinished: currentQuestion + 1 === state.questions.length,
+        isStarted: !isFinished,
+        isFinished,
       };
     case 'SET_QUESTIONS':
       return {
