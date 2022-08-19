@@ -84,11 +84,5 @@ const quizReducer = (state: QuizState, action: QuizAction): QuizState => {
 };
 
 export const useQuizReducer = (): [QuizState, Dispatch<QuizAction>] => {
-  const [state, dispatch] = useReducer(quizReducer, intialState);
-
-  useQuestions({
-    onSuccess: (questions) => dispatch({ type: 'SET_QUESTIONS', payload: { questions } }),
-  });
-
-  return [state, dispatch];
+  return useReducer(quizReducer, intialState);
 };
