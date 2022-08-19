@@ -2,12 +2,11 @@ import { QuizLayout } from '~/layouts';
 
 export const HomeScreen = () => {
   return (
-    <QuizLayout
-      headline={
-        <h1 className='text-center text-2xl font-semibold'>Welcome to the Trivia Challenge!</h1>
-      }
-      body={<div>hello</div>}
-      footer={<button></button>}
-    />
+    <QuizLayout>
+      <h1 className='font-semibold'>Welcome to the Trivia Challenge!</h1>
+      <p>You will be presented with 10 True or False questions.</p>
+      <p>Can you score 100%</p>
+      <button>BEGIN</button>
+    </QuizLayout>
   );
 };
