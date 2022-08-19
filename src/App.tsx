@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { HomeScreen } from '~/screens';
+
 
 function App() {
-  return <div className="underline">Hello</div>;
+  return <div>
+    <HomeScreen />
+  </div>
 }
 
 export default App;

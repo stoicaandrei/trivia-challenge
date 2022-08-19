@@ -1,1 +1,1 @@
-export * from './QuizLayout'
+export * from './QuizLayout';
