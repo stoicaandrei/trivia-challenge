@@ -19,6 +19,7 @@ yarn dev
 Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
 
 ---
-<img width="601" alt="Screenshot 2022-08-19 at 13 48 39" src="https://user-images.githubusercontent.com/22038087/185603145-7e1b2ad1-5ba3-45f5-b3ae-d436d525e99c.png">
-<img width="563" alt="Screenshot 2022-08-19 at 13 50 13" src="https://user-images.githubusercontent.com/22038087/185603148-31dd2982-117c-4b80-9ff2-cf3b87ca4305.png">
-<img width="581" alt="Screenshot 2022-08-19 at 13 50 21" src="https://user-images.githubusercontent.com/22038087/185603156-ad411809-9e03-41e4-97a3-89e78e005d0a.png">
+
+![trivia challenge1](https://user-images.githubusercontent.com/22038087/185603563-1a455ec6-5849-4bd7-9d37-3255c03b7c00.png)
+![trivia challenge2](https://user-images.githubusercontent.com/22038087/185603574-d494efa7-1a90-42c7-b392-92794dc44fbb.png)
+![trivia challenge3](https://user-images.githubusercontent.com/22038087/185603579-7522c96b-d710-44de-ac5f-335e673f1107.png)
